@@ -9,7 +9,28 @@ Most AI projects wrap a language model around a text prompt. This project does t
 ---
 
 ## 🧠 The Architecture
+## 🧠 The Architecture
 
+```mermaid
+graph TD
+    subgraph MS_Cloud [Cloud Infrastructure]
+        A[Microsoft Azure AI Foundry<br><i>Multi-Step Reasoning Agent</i>]
+    end
+
+    subgraph Local_System [Local Stress-Test Environment]
+        B[Python Integration Bridge<br><i>Subprocess Manager & Log Parser</i>]
+        C[C++ Matching Engine<br><i>Escrow Logic & Order Book</i>]
+    end
+
+    A -- "1. Generates Trade Command" --> B
+    B -- "2. Injects Order via stdin" --> C
+    C -- "3. Enforces Capital Constraints" --> C
+    C -- "4. Outputs Rejection/Trade via stdout" --> B
+    B -- "5. Feeds Error Log for Adaptation" --> A
+    
+    style A fill:#0078D4,stroke:#fff,stroke-width:2px,color:#fff
+    style B fill:#3776AB,stroke:#fff,stroke-width:2px,color:#fff
+    style C fill:#00599C,stroke:#fff,stroke-width:2px,color:#fff
 The system is broken down into three frictionless layers:
 
 1. **The C++ Matching Engine (Core Logic):** A robust, memory-efficient order book that processes `BUY` and `SELL` limits. It includes an embedded **Escrow & Wallet Management** system. If an order lacks sufficient USD or Crypto Token backing, the engine actively rejects the trade and throws an error flag.
