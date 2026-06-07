@@ -30,6 +30,7 @@ graph TD
     style A fill:#0078D4,stroke:#fff,stroke-width:2px,color:#fff
     style B fill:#3776AB,stroke:#fff,stroke-width:2px,color:#fff
     style C fill:#00599C,stroke:#fff,stroke-width:2px,color:#fff
+```
 The system is broken down into three frictionless layers:
 
 1. **The C++ Matching Engine (Core Logic):** A robust, memory-efficient order book that processes `BUY` and `SELL` limits. It includes an embedded **Escrow & Wallet Management** system. If an order lacks sufficient USD or Crypto Token backing, the engine actively rejects the trade and throws an error flag.
