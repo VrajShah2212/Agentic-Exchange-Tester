@@ -9,7 +9,6 @@ Most AI projects wrap a language model around a text prompt. This project does t
 ---
 
 ## 🧠 The Architecture
-## 🧠 The Architecture
 
 ```mermaid
 graph TD
